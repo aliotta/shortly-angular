@@ -1,9 +1,11 @@
 <div id='signin'>
   <h1>signin</h1>
   <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
+    <input type='text'ng-model='user.username' ng-pattern='/^[a-zA-Z0-9]+$/'>
+    <input type="password" ng-model='user.password' ng-pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/'>
+    <button ng-disabled='!signinForm.$valid'>signin</button>
+    <p class="error" ng-show="!signinForm.$valid">
+      Invalid user name or password!</p>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>

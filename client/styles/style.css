@@ -119,9 +119,12 @@ input[type=url]:focus {
 
 
 .error {
-  border: red solid 4px;
+  border: pink solid 4px;
+  border-radius: 5px;
+  color: pink;
   padding: 10px;
-  margin: 0 10px;
+  margin: 10 10px;
+  width: 25%;
 }
 
 .clean {

@@ -1,9 +1,16 @@
 <div id='signup'>
   <h1>signup</h1>
-  <form name="signupForm" ng-submit='signup()'>
+  <!-- <form name="signupForm" ng-submit='signup()'>
     <input type='text' ng-model='user.username'>
     <input type="password" ng-model='user.password'>
     <button>signup</button>
+  </form> -->
+  <form name="signupForm" ng-submit='signup()'>
+    <input type='text'ng-model='user.username' ng-pattern='/^[a-zA-Z0-9]+$/'>
+    <input type="password" ng-model='user.password' ng-pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/'>
+    <button ng-disabled='!signupForm.$valid'>signup</button>
+    <p class="error" ng-show="!signupForm.$valid">
+      Invalid user name or password!</p>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
 </div>

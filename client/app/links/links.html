@@ -1,3 +1,11 @@
 <div id='container'>
   <!-- Your html here -->
+  <div class="link" ng-repeat="link in links track by $index">
+    <img src="assets/redirect_icon.png" />
+    <div class ="info">
+      <div class="title">{{ link.title }}</div> 
+      <div class="original">{{ link.url}}</div>
+      <div class="visits"><span class="count">{{ link.visits }}</span>Visits</div>
+      <a href="{{link.base_url}}/api/links/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+    </div>
 </div>

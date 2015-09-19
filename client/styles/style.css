@@ -48,6 +48,10 @@ h1 {
   background-color: #ccc;
 }
 
+#signout {
+  float: right;
+}
+
 #container {
   clear: both;
   margin-top: 10px;

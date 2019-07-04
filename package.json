@@ -6,7 +6,9 @@
   "scripts": {
     "test": "karma start karma.conf.js",
     "lint": "jscs ./",
-    "start": "gulp"
+    "start": "gulp",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": "lint",
   "author": "",
@@ -45,6 +47,8 @@
     "passport": "^0.2.0",
     "passport-local": "^1.0.0",
     "q": "^1.0.1",
-    "request": "^2.36.0"
-  }
+    "request": "^2.36.0",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
